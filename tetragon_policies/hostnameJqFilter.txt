@@ -1,0 +1,17 @@
+jq 'select(.process_exec != null) | 
+select(
+  (.process_exec.process.binary | contains("/hostnamectl")) or
+  (.process_exec.process.binary | contains("/dig")) or
+  (.process_exec.process.binary | contains("/nslookup")) or
+  (.process_exec.process.binary | contains("/host")) or
+  (.process_exec.process.binary | contains("/curl")) or
+  (.process_exec.process.binary | contains("/wget")) or
+  (.process_exec.process.binary | contains("/hostname")) or
+  (.process_exec.process.binary | contains("/nmcli")) or
+  (.process_exec.process.binary | contains("/nmtui"))
+) |
+"\(.time) 
+ \(.process_exec.process.pod.namespace) 
+ \(.process_exec.process.pod.name) 
+ \(.process_exec.process.binary) 
+ \(.process_exec.process.arguments)"'

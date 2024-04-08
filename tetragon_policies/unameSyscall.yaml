@@ -1,0 +1,13 @@
+apiVersion: cilium.io/v1alpha1
+kind: TracingPolicyNamespaced
+metadata:
+  name: "uname-syscalls-tracepoints"
+  namespace: "default"
+spec:
+  tracepoints:
+  - subsystem: "syscalls"
+    event: "sys_enter_newuname"
+    selectors:
+    - matchActions:
+      - action: Post
+        rateLimit: 1m

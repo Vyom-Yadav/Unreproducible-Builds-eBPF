@@ -1,0 +1,19 @@
+apiVersion: cilium.io/v1alpha1
+kind: TracingPolicyNamespaced
+metadata:
+  name: "time-syscalls-kprobes"
+  namespace: "default"
+spec:
+  lists:
+  - name: "time-syscalls"
+    type: "syscalls"
+    values:
+    - "sys_clock_gettime"
+    - "sys_gettimeofday"
+    - "sys_time"
+  kprobes:
+  - call: "list:time-syscalls"
+    selectors:
+    - matchActions:
+      - action: Post
+        rateLimit: 1m

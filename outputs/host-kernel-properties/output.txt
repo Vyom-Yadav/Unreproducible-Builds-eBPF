@@ -1,0 +1,185 @@
+⁉️ tracepoint default/ubuntu /usr/bin/ls syscalls sys_enter_newuname             
+⁉️ tracepoint default/ubuntu /usr/bin/sleep syscalls sys_enter_newuname          
+⁉️ tracepoint default/ubuntu /usr/bin/cat syscalls sys_enter_newuname            
+⁉️ tracepoint default/ubuntu /root/unrep/build.sh syscalls sys_enter_newuname    
+⁉️ tracepoint default/ubuntu /usr/bin/uname syscalls sys_enter_newuname          
+⁉️ tracepoint default/ubuntu /usr/bin/cut syscalls sys_enter_newuname            
+⁉️ tracepoint default/ubuntu /usr/bin/tr syscalls sys_enter_newuname             
+⁉️ tracepoint default/ubuntu /usr/bin/grep syscalls sys_enter_newuname           
+⁉️ tracepoint default/ubuntu /usr/bin/grep syscalls sys_enter_newuname           
+⁉️ tracepoint default/ubuntu /usr/bin/cut syscalls sys_enter_newuname            
+⁉️ tracepoint default/ubuntu /usr/bin/gcc syscalls sys_enter_newuname            
+⁉️ tracepoint default/ubuntu /usr/lib/gcc/x86_64-linux-gnu/11/cc1 syscalls sys_enter_newuname 
+⁉️ tracepoint default/ubuntu /usr/bin/as syscalls sys_enter_newuname             
+⁉️ tracepoint default/ubuntu /usr/lib/gcc/x86_64-linux-gnu/11/collect2 syscalls sys_enter_newuname 
+⁉️ tracepoint default/ubuntu /usr/bin/ld syscalls sys_enter_newuname 
+
+
+
+📚 read    default/ubuntu /usr/bin/grep /usr/lib/os-release               
+📚 read    default/ubuntu /usr/bin/grep /usr/lib/os-release               
+📚 read    default/ubuntu /usr/bin/grep /usr/lib/os-release               
+📚 read    default/ubuntu /usr/bin/grep /usr/lib/os-release               
+📚 read    default/ubuntu /usr/bin/grep /proc/version                     
+📚 read    default/ubuntu /usr/bin/grep /proc/version    
+
+
+# File read
+{
+  "process_kprobe": {
+    "process": {
+      "exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNzc4Mjc4MjQxNTY1OjE4NjMwMjI=",
+      "pid": 1863022,
+      "uid": 0,
+      "cwd": "/root/unrep",
+      "binary": "/usr/bin/grep",
+      "arguments": "machine /proc/version",
+      "flags": "execve clone",
+      "start_time": "2024-04-08T13:41:58.645129450Z",
+      "auid": 4294967295,
+      "pod": {
+        "namespace": "default",
+        "name": "ubuntu",
+        "container": {
+          "id": "containerd://dc45ab48a0eccae75ac218d2a7eb5c1d031d6504f7ea64ffcf671adab6a2417d",
+          "name": "ubuntu",
+          "image": {
+            "id": "docker.io/library/ubuntu@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e",
+            "name": "docker.io/library/ubuntu:latest"
+          },
+          "start_time": "2024-03-30T17:13:34Z",
+          "pid": 40683
+        },
+        "workload": "ubuntu",
+        "workload_kind": "Pod"
+      },
+      "docker": "dc45ab48a0eccae75ac218d2a7eb5c1",
+      "parent_exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNzc4Mjc3Mzc0NjA2OjE4NjMwMjE=",
+      "refcnt": 1,
+      "tid": 1863022
+    },
+    "parent": {
+      "exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNzc4Mjc3Mzc0NjA2OjE4NjMwMjE=",
+      "pid": 1863021,
+      "uid": 0,
+      "cwd": "/root/unrep",
+      "binary": "/root/unrep/build.sh",
+      "arguments": "./build.sh",
+      "flags": "execve",
+      "start_time": "2024-04-08T13:41:58.644262129Z",
+      "auid": 4294967295,
+      "pod": {
+        "namespace": "default",
+        "name": "ubuntu",
+        "container": {
+          "id": "containerd://dc45ab48a0eccae75ac218d2a7eb5c1d031d6504f7ea64ffcf671adab6a2417d",
+          "name": "ubuntu",
+          "image": {
+            "id": "docker.io/library/ubuntu@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e",
+            "name": "docker.io/library/ubuntu:latest"
+          },
+          "start_time": "2024-03-30T17:13:34Z",
+          "pid": 40676
+        },
+        "workload": "ubuntu",
+        "workload_kind": "Pod"
+      },
+      "docker": "dc45ab48a0eccae75ac218d2a7eb5c1",
+      "parent_exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNzc4MjcxMjA4MDU5OjE4NjMwMTU=",
+      "refcnt": 1,
+      "tid": 1863021
+    },
+    "function_name": "security_file_permission",
+    "args": [
+      {
+        "file_arg": {
+          "path": "/proc/version"
+        }
+      },
+      {
+        "int_arg": 4
+      }
+    ],
+    "return": {
+      "int_arg": 0
+    },
+    "action": "KPROBE_ACTION_POST",
+    "policy_name": "host-kernel-properties-monitoring"
+  },
+  "node_name": "node-pool-ebpf-jcgn5",
+  "time": "2024-04-08T13:41:58.645846895Z"
+}
+
+
+# uname
+{
+  "process_tracepoint": {
+    "process": {
+      "exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNzc4MjczMjE4MDg0OjE4NjMwMTY=",
+      "pid": 1863016,
+      "uid": 0,
+      "cwd": "/root/unrep",
+      "binary": "/usr/bin/uname",
+      "arguments": "-m",
+      "flags": "execve clone",
+      "start_time": "2024-04-08T13:41:58.640105798Z",
+      "auid": 4294967295,
+      "pod": {
+        "namespace": "default",
+        "name": "ubuntu",
+        "container": {
+          "id": "containerd://dc45ab48a0eccae75ac218d2a7eb5c1d031d6504f7ea64ffcf671adab6a2417d",
+          "name": "ubuntu",
+          "image": {
+            "id": "docker.io/library/ubuntu@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e",
+            "name": "docker.io/library/ubuntu:latest"
+          },
+          "start_time": "2024-03-30T17:13:34Z",
+          "pid": 40677
+        },
+        "workload": "ubuntu",
+        "workload_kind": "Pod"
+      },
+      "docker": "dc45ab48a0eccae75ac218d2a7eb5c1",
+      "parent_exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNzc4MjcxMjA4MDU5OjE4NjMwMTU=",
+      "refcnt": 1,
+      "tid": 1863016
+    },
+    "parent": {
+      "exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNzc4MjcxMjA4MDU5OjE4NjMwMTU=",
+      "pid": 1863015,
+      "uid": 0,
+      "cwd": "/root/unrep",
+      "binary": "/root/unrep/build.sh",
+      "arguments": "./build.sh",
+      "flags": "execve clone",
+      "start_time": "2024-04-08T13:41:58.638095853Z",
+      "auid": 4294967295,
+      "pod": {
+        "namespace": "default",
+        "name": "ubuntu",
+        "container": {
+          "id": "containerd://dc45ab48a0eccae75ac218d2a7eb5c1d031d6504f7ea64ffcf671adab6a2417d",
+          "name": "ubuntu",
+          "image": {
+            "id": "docker.io/library/ubuntu@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e",
+            "name": "docker.io/library/ubuntu:latest"
+          },
+          "start_time": "2024-03-30T17:13:34Z",
+          "pid": 40676
+        },
+        "workload": "ubuntu",
+        "workload_kind": "Pod"
+      },
+      "docker": "dc45ab48a0eccae75ac218d2a7eb5c1",
+      "parent_exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzczNDE3NTAwMDAwMDAwOjE4NjIwNDg=",
+      "tid": 1863015
+    },
+    "subsys": "syscalls",
+    "event": "sys_enter_newuname",
+    "policy_name": "uname-syscalls-tracepoints",
+    "action": "KPROBE_ACTION_POST"
+  },
+  "node_name": "node-pool-ebpf-jcgn5",
+  "time": "2024-04-08T13:41:58.640198756Z"
+}

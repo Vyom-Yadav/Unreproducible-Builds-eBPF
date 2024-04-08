@@ -1,0 +1,79 @@
+{
+  "process_kprobe": {
+    "process": {
+      "exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzY4MDA5MDI5NDc2NDU4OjE4NDk0MDc=",
+      "pid": 1849407,
+      "uid": 0,
+      "cwd": "/root/unrep",
+      "binary": "/usr/bin/date",
+      "arguments": "+%Y%m%d",
+      "flags": "execve clone",
+      "start_time": "2024-04-08T12:05:49.396364693Z",
+      "auid": 4294967295,
+      "pod": {
+        "namespace": "default",
+        "name": "ubuntu",
+        "container": {
+          "id": "containerd://dc45ab48a0eccae75ac218d2a7eb5c1d031d6504f7ea64ffcf671adab6a2417d",
+          "name": "ubuntu",
+          "image": {
+            "id": "docker.io/library/ubuntu@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e",
+            "name": "docker.io/library/ubuntu:latest"
+          },
+          "start_time": "2024-03-30T17:13:34Z",
+          "pid": 40415
+        },
+        "workload": "ubuntu",
+        "workload_kind": "Pod"
+      },
+      "docker": "dc45ab48a0eccae75ac218d2a7eb5c1",
+      "parent_exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzY4MDA5MDI4MDkzMjc2OjE4NDk0MDY=",
+      "refcnt": 1,
+      "tid": 1849407
+    },
+    "parent": {
+      "exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzY4MDA5MDI4MDkzMjc2OjE4NDk0MDY=",
+      "pid": 1849406,
+      "uid": 0,
+      "cwd": "/root/unrep",
+      "binary": "/root/unrep/build.sh",
+      "arguments": "./build.sh",
+      "flags": "execve clone",
+      "start_time": "2024-04-08T12:05:49.394981221Z",
+      "auid": 4294967295,
+      "pod": {
+        "namespace": "default",
+        "name": "ubuntu",
+        "container": {
+          "id": "containerd://dc45ab48a0eccae75ac218d2a7eb5c1d031d6504f7ea64ffcf671adab6a2417d",
+          "name": "ubuntu",
+          "image": {
+            "id": "docker.io/library/ubuntu@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e",
+            "name": "docker.io/library/ubuntu:latest"
+          },
+          "start_time": "2024-03-30T17:13:34Z",
+          "pid": 40414
+        },
+        "workload": "ubuntu",
+        "workload_kind": "Pod"
+      },
+      "docker": "dc45ab48a0eccae75ac218d2a7eb5c1",
+      "parent_exec_id": "bm9kZS1wb29sLWVicGYtamNnbjU6NzY2NzA2MjYzNDA1MjA2OjE4NDYyMzc=",
+      "tid": 1849406
+    },
+    "function_name": "__x64_sys_clock_gettime",
+    "action": "KPROBE_ACTION_POST",
+    "policy_name": "time-syscalls-kprobes"
+  },
+  "node_name": "node-pool-ebpf-jcgn5",
+  "time": "2024-04-08T12:05:49.396673160Z"
+}
+
+
+❓ syscall default/ubuntu /usr/bin/bash __x64_sys_time                              
+❓ syscall default/ubuntu /root/unrep/build.sh __x64_sys_gettimeofday               
+❓ syscall default/ubuntu /usr/bin/date __x64_sys_clock_gettime                     
+❓ syscall default/ubuntu /usr/bin/gcc __x64_sys_clock_gettime                      
+❓ syscall default/ubuntu /usr/lib/gcc/x86_64-linux-gnu/11/cc1 __x64_sys_gettimeofday 
+❓ syscall default/ubuntu /usr/lib/gcc/x86_64-linux-gnu/11/collect2 __x64_sys_clock_gettime 
+❓ syscall default/ubuntu /root/unrep/build.sh __x64_sys_time      
